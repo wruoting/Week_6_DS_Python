@@ -159,6 +159,20 @@ def main():
     plt.show()
     plt.close()
     print('\nQuestion 2')
+    print('d = 1 and W = 5 gives the best accuracy')
+    predicted_df_2019 = get_windowed_slice_and_fit(df_trading_weeks_2018, df_trading_weeks_2019, W=5, d=1)
+    predicted_df_2019.columns = ['Classification']
+    df_2019_classifications = df_trading_weeks_2019.iloc[6: len(df_trading_weeks_2019.index)]['Classification'].to_frame()
+    df_2019_classifications.columns = ['Classification']
+    accuracy = np.round(np.multiply(np.mean(df_2019_classifications == predicted_df_2019), 100)).loc['Classification']
+    print("Accuracy is {}%".format(accuracy))
+    print('d = 2 and W = 6 gives the best accuracy')
+    predicted_df_2019 = get_windowed_slice_and_fit(df_trading_weeks_2018, df_trading_weeks_2019, W=6, d=2)
+    predicted_df_2019.columns = ['Classification']
+    df_2019_classifications = df_trading_weeks_2019.iloc[7: len(df_trading_weeks_2019.index)]['Classification'].to_frame()
+    df_2019_classifications.columns = ['Classification']
+    accuracy = np.round(np.multiply(np.mean(df_2019_classifications == predicted_df_2019), 100)).loc['Classification']
+    print("Accuracy is {}%".format(accuracy))
     print('d = 3 and W = 10 gives the best accuracy')
     predicted_df_2019 = get_windowed_slice_and_fit(df_trading_weeks_2018, df_trading_weeks_2019, W=10, d=3)
     predicted_df_2019.columns = ['Classification']

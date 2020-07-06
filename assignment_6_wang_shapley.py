@@ -131,8 +131,8 @@ def main():
     print(df_table_overall_accuracy)
     print('Accuracy Shapley')
     print(df_table)
-    print('Versicolor had the best performance of classification that was feature agnostic. Binary classifications with versicolor and the other flowers ')
-    print('showed that there is separability between versicolor and those flowers. Iris-virginica has the second best separability, with petal length having the highest ')
+    print('Iris-setosa had the best performance of classification that was feature agnostic. Binary classifications with Iris-setosa and the other flowers ')
+    print('showed that there is separability between Iris-setosa and those flowers. Iris-virginica has the second best separability, with petal length having the highest ')
     print('contribution towards accuracy at 5.33%. For Iris-versicolor, sepal width has the highest contribution with 9.33%, but it has the lowest separability overall.')
 
 if __name__ == "__main__":
